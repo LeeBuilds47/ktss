@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Register – KTSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body data-page="register">
+<div class="top"><div class="wrap"><nav aria-label="Quick links"><a href="register.html">Register</a><a href="fees.html">Tuition Fees</a><a href="faq.html">FAQ</a><a href="admin.html">Admin</a></nav><div class="contact"><a href="tel:+250000000000">+250 000 000 000</a><a href="mailto:info@ktss.example">info@ktss.example</a></div></div></div>
+<header class="main"><div class="wrap"><a class="brand" href="index.html" aria-label="KTSS home"><span class="logo">KTSS</span><span><b>KTSS</b><small>TECHNICAL SECONDARY SCHOOL</small></span></a>
+<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
+<nav class="menu" id="menu" aria-label="Main"><ul><li><a href="index.html" data-nav="index">Home</a></li><li><a href="about.html" data-nav="about">About Us</a><ul class="sub"><li><a href="about.html?tab=principal">Principal's Message</a></li><li><a href="about.html?tab=mission">Mission and Vision</a></li><li><a href="about.html?tab=staff">Staff</a></li><li><a href="about.html?tab=youth">KTSS Youth</a></li></ul></li><li><a href="programs.html" data-nav="programs">Programs</a><ul class="sub"><li><a href="program.html?p=olevel">O'Level</a></li><li><a href="program.html?p=software">Software Development</a></li><li><a href="program.html?p=accounting">Accounting</a></li></ul></li><li><a href="news.html" data-nav="news">News &amp; Events</a></li><li><a href="gallery.html" data-nav="gallery">Gallery</a></li><li><a href="downloads.html" data-nav="downloads">Downloads</a></li><li><a href="contact.html" data-nav="contact">Contact Us</a></li></ul><a class="btn nav-apply" href="register.html">Apply Now</a></nav></div></header>
+<main>
+<div class="pagehead"><div class="wrap"><h1>Apply to KTSS</h1><p>Complete the three steps. Required fields are marked *.</p></div></div><section class="s"><div class="wrap"><div class="form"><h3>Application Form</h3>
+<div class="steps" id="steps"><div class="step on"><i>1</i>Personal Info</div><span class="line"></span><div class="step"><i>2</i>Contact Info</div><span class="line"></span><div class="step"><i>3</i>Documents &amp; Submit</div></div>
+<form id="f" novalidate>
+<div class="pane on"><h4>Personal Information</h4>
+<div class="row"><label for="fn">First Name <em>*</em></label><input id="fn" required placeholder="First Name"><span class="err">Enter your first name.</span></div>
+<div class="row"><label for="ln">Last Name <em>*</em></label><input id="ln" required placeholder="Last Name"><span class="err">Enter your last name.</span></div>
+<div class="row"><label for="g">Gender <em>*</em></label><select id="g" required><option value="">Select an Option</option><option>Female</option><option>Male</option></select><span class="err">Select a gender.</span></div>
+<div class="row"><label for="dob">Date of Birth <em>*</em></label><input id="dob" type="date" required><span class="err">Choose a valid date of birth.</span></div>
+<div class="row"><label for="prg">Program <em>*</em></label><div><select id="prg" required></select><span class="err">Select a program.</span><small class="fee-hint" id="program-fee" aria-live="polite">Select a program to see its tuition fee.</small></div></div>
+<div class="row"><label for="nat">Nationality</label><input id="nat" placeholder="Your Nationality"></div>
+<div class="row"><label for="res">Place of Residence</label><input id="res" placeholder="Your Place of Residence"></div>
+<div class="acts"><span></span><button type="button" class="btn" data-next>Next</button></div></div>
+<div class="pane"><h4>Contact Information</h4>
+<div class="row"><label for="ph">Phone <em>*</em></label><input id="ph" type="tel" required placeholder="+250 ..."><span class="err">Enter a phone number with at least 9 digits.</span></div>
+<div class="row"><label for="em">Email</label><input id="em" type="email" placeholder="name@example.com"><span class="err">Enter a valid email address.</span></div>
+<div class="row"><label for="pn">Parent / Guardian Name <em>*</em></label><input id="pn" required placeholder="Parent or guardian"><span class="err">Enter a parent or guardian name.</span></div>
+<div class="row"><label for="pp">Parent / Guardian Phone <em>*</em></label><input id="pp" type="tel" required placeholder="+250 ..."><span class="err">Enter a phone number with at least 9 digits.</span></div>
+<div class="acts"><button type="button" class="btn out" data-prev>Back</button><button type="button" class="btn" data-next>Next</button></div></div>
+<div class="pane"><h4>Documents &amp; Submit</h4>
+<div class="row"><label for="hi">Health Insurance</label><input id="hi" placeholder="e.g. RSSB"></div>
+<div class="row"><label>Passport Photo</label><div><div class="drop" id="drop" tabindex="0" role="button" aria-label="Upload passport photo"><div aria-hidden="true" style="font-size:2rem;color:var(--red)">⇪</div><b id="dn">Upload Passport Photo</b><span>Drag &amp; drop image here or <u>Browse File</u></span><br><small>JPG, PNG, WEBP allowed. Maximum size: 2MB.</small><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden></div><span id="fe" style="display:block;color:var(--red);font-size:.85rem;margin-top:8px"></span></div></div>
+<div class="acts"><button type="button" class="btn out" data-prev>Back</button><button type="submit" class="btn">Submit Application</button></div></div>
+</form>
+<div class="ok" id="ok" role="status"><h4>Application received</h4><p>Thank you. KTSS will contact you using the phone number you provided.</p><p style="color:var(--mute);font-size:.9rem">Demo only: this form does not send data anywhere yet.</p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap"><div class="fg">
+<div><h5>About Us</h5><p>KTSS Technical Secondary School. Add a short history and mission statement here.</p><div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a><a href="#" aria-label="X">x</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="WhatsApp">wa</a></div></div>
+<div><h5>Trades Offered</h5><ul><li><a href="program.html?p=olevel">O'Level</a></li><li><a href="program.html?p=software">Software Development</a></li><li><a href="program.html?p=accounting">Accounting</a></li></ul></div>
+<div><h5>Quick Links</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="news.html">News</a></li><li><a href="register.html">Register</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+<div><h5>External Links</h5><ul><li><a href="https://www.mineduc.gov.rw" target="_blank" rel="noopener">MINEDUC</a></li><li><a href="https://www.nesa.gov.rw" target="_blank" rel="noopener">NESA</a></li><li><a href="https://www.rtb.gov.rw" target="_blank" rel="noopener">RTB</a></li><li><a href="downloads.html">Brochure</a></li></ul></div>
+<div><h5>Contact Us</h5><ul style="gap:16px"><li>+250 000 000 000</li><li>info@ktss.example</li><li>Monday - Friday: 8:00 AM - 5:00 PM</li><li>Your address, Rwanda</li></ul></div></div></div>
+<div class="copy">© <span data-year>2026</span> | All Rights Reserved — KTSS Technical Secondary School</div></footer>
+<script src="js/main.js"></script><script src="js/data.js"></script><script src="js/register.js"></script>
+</body></html>

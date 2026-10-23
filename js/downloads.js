@@ -1,0 +1,4 @@
+// Put real file paths in href, e.g. href:'files/brochure.pdf'. Empty href shows a notice.
+const FILES=[{t:'School brochure',d:'PDF',href:''},{t:'Application form (printable)',d:'PDF',href:''},{t:'Fee structure 2026-2027',d:'PDF',href:''},{t:'School calendar',d:'PDF',href:''}];
+$('#dl').innerHTML=FILES.map((f,i)=>`<div class="dl"><div><b>${f.t}</b><span>${f.d}</span></div><a class="btn" data-i="${i}" href="${f.href||'#'}" ${f.href?'download':''}>Download</a></div>`).join('');
+$('#dl').onclick=e=>{const a=e.target.closest('a[data-i]');if(a&&!FILES[a.dataset.i].href){e.preventDefault();toast('This file has not been added yet.')}};
