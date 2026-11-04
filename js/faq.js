@@ -7,6 +7,14 @@ const QA=[
 ['Does the school offer boarding?','Add your answer here.'],
 ['How can I contact the school?','Call or email using the details at the bottom of any page, Monday to Friday, 8:00 AM - 5:00 PM.']];
 const box=$('#fl'),q=$('#fq');
-function draw(){const s=q.value.toLowerCase().trim();const l=QA.filter(x=>(x[0]+x[1]).toLowerCase().includes(s));
- box.innerHTML=l.length?l.map(x=>`<details class="q"><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join(''):'<p class="empty">No question matches. <a href="contact.html" style="color:var(--blue)">Ask the school</a>.</p>'}
+function draw(){
+ const s=q.value.toLowerCase().trim();
+ const l=QA.filter(x=>{
+  const localized=window.ktssTranslateText?x.map(text=>window.ktssTranslateText(text)).join(' '):'';
+  return (x.join(' ')+' '+localized).toLowerCase().includes(s);
+ });
+ const emptyText = window.ktssT ? window.ktssT('faq.empty','No question matches.') : 'No question matches.';
+ const askText = window.ktssT ? window.ktssT('faq.ask','Ask the school') : 'Ask the school';
+ box.innerHTML=l.length?l.map(x=>`<details class="q"><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join(''):`<p class="empty">${emptyText} <a href="contact.html" style="color:var(--blue)">${askText}</a>.</p>`;
+}
 q.oninput=draw;draw();

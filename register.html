@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Register – KTSS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"></head>
 <body data-page="register">
 <div class="top"><div class="wrap"><nav aria-label="Quick links"><a href="register.html">Register</a><a href="fees.html">Tuition Fees</a><a href="faq.html">FAQ</a><a href="admin.html">Admin</a></nav><div class="contact"><a href="tel:+250000000000">+250 000 000 000</a><a href="mailto:info@ktss.example">info@ktss.example</a></div></div></div>
@@ -10,30 +10,30 @@
 <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
 <nav class="menu" id="menu" aria-label="Main"><ul><li><a href="index.html" data-nav="index">Home</a></li><li><a href="about.html" data-nav="about">About Us</a><ul class="sub"><li><a href="about.html?tab=principal">Principal's Message</a></li><li><a href="about.html?tab=mission">Mission and Vision</a></li><li><a href="about.html?tab=staff">Staff</a></li><li><a href="about.html?tab=youth">KTSS Youth</a></li></ul></li><li><a href="programs.html" data-nav="programs">Programs</a><ul class="sub"><li><a href="program.html?p=olevel">O'Level</a></li><li><a href="program.html?p=software">Software Development</a></li><li><a href="program.html?p=accounting">Accounting</a></li></ul></li><li><a href="news.html" data-nav="news">News &amp; Events</a></li><li><a href="gallery.html" data-nav="gallery">Gallery</a></li><li><a href="downloads.html" data-nav="downloads">Downloads</a></li><li><a href="contact.html" data-nav="contact">Contact Us</a></li></ul><a class="btn nav-apply" href="register.html">Apply Now</a></nav></div></header>
 <main>
-<div class="pagehead"><div class="wrap"><h1>Apply to KTSS</h1><p>Complete the three steps. Required fields are marked *.</p></div></div><section class="s"><div class="wrap"><div class="form"><h3>Application Form</h3>
-<div class="steps" id="steps"><div class="step on"><i>1</i>Personal Info</div><span class="line"></span><div class="step"><i>2</i>Contact Info</div><span class="line"></span><div class="step"><i>3</i>Documents &amp; Submit</div></div>
+<div class="pagehead"><div class="wrap"><h1 data-i18n="register.pageTitle">Apply to KTSS</h1><p data-i18n="register.pageIntro">Complete the three steps. Required fields are marked *.</p></div></div><section class="s"><div class="wrap"><div class="form"><h3 data-i18n="register.formTitle">Application Form</h3>
+<div class="steps" id="steps"><div class="step on"><i>1</i><span data-i18n="register.steps.personal">Personal Info</span></div><span class="line"></span><div class="step"><i>2</i><span data-i18n="register.steps.contact">Contact Info</span></div><span class="line"></span><div class="step"><i>3</i><span data-i18n="register.steps.docs">Documents &amp; Submit</span></div></div>
 <form id="f" novalidate>
-<div class="pane on"><h4>Personal Information</h4>
-<div class="row"><label for="fn">First Name <em>*</em></label><input id="fn" required placeholder="First Name"><span class="err">Enter your first name.</span></div>
-<div class="row"><label for="ln">Last Name <em>*</em></label><input id="ln" required placeholder="Last Name"><span class="err">Enter your last name.</span></div>
-<div class="row"><label for="g">Gender <em>*</em></label><select id="g" required><option value="">Select an Option</option><option>Female</option><option>Male</option></select><span class="err">Select a gender.</span></div>
-<div class="row"><label for="dob">Date of Birth <em>*</em></label><input id="dob" type="date" required><span class="err">Choose a valid date of birth.</span></div>
-<div class="row"><label for="prg">Program <em>*</em></label><div><select id="prg" required></select><span class="err">Select a program.</span><small class="fee-hint" id="program-fee" aria-live="polite">Select a program to see its tuition fee.</small></div></div>
-<div class="row"><label for="nat">Nationality</label><input id="nat" placeholder="Your Nationality"></div>
-<div class="row"><label for="res">Place of Residence</label><input id="res" placeholder="Your Place of Residence"></div>
-<div class="acts"><span></span><button type="button" class="btn" data-next>Next</button></div></div>
-<div class="pane"><h4>Contact Information</h4>
-<div class="row"><label for="ph">Phone <em>*</em></label><input id="ph" type="tel" required placeholder="+250 ..."><span class="err">Enter a phone number with at least 9 digits.</span></div>
-<div class="row"><label for="em">Email</label><input id="em" type="email" placeholder="name@example.com"><span class="err">Enter a valid email address.</span></div>
-<div class="row"><label for="pn">Parent / Guardian Name <em>*</em></label><input id="pn" required placeholder="Parent or guardian"><span class="err">Enter a parent or guardian name.</span></div>
-<div class="row"><label for="pp">Parent / Guardian Phone <em>*</em></label><input id="pp" type="tel" required placeholder="+250 ..."><span class="err">Enter a phone number with at least 9 digits.</span></div>
-<div class="acts"><button type="button" class="btn out" data-prev>Back</button><button type="button" class="btn" data-next>Next</button></div></div>
-<div class="pane"><h4>Documents &amp; Submit</h4>
-<div class="row"><label for="hi">Health Insurance</label><input id="hi" placeholder="e.g. RSSB"></div>
-<div class="row"><label>Passport Photo</label><div><div class="drop" id="drop" tabindex="0" role="button" aria-label="Upload passport photo"><div aria-hidden="true" style="font-size:2rem;color:var(--red)">⇪</div><b id="dn">Upload Passport Photo</b><span>Drag &amp; drop image here or <u>Browse File</u></span><br><small>JPG, PNG, WEBP allowed. Maximum size: 2MB.</small><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden></div><span id="fe" style="display:block;color:var(--red);font-size:.85rem;margin-top:8px"></span></div></div>
-<div class="acts"><button type="button" class="btn out" data-prev>Back</button><button type="submit" class="btn">Submit Application</button></div></div>
+<div class="pane on"><h4 data-i18n="register.personalTitle">Personal Information</h4>
+<div class="row"><label for="fn"><span data-i18n="register.labels.firstName">First Name</span> <em>*</em></label><input id="fn" required data-i18n-placeholder="register.placeholders.firstName" placeholder="First Name"><span class="err" data-i18n="register.errors.firstName">Enter your first name.</span></div>
+<div class="row"><label for="ln"><span data-i18n="register.labels.lastName">Last Name</span> <em>*</em></label><input id="ln" required data-i18n-placeholder="register.placeholders.lastName" placeholder="Last Name"><span class="err" data-i18n="register.errors.lastName">Enter your last name.</span></div>
+<div class="row"><label for="g"><span data-i18n="register.labels.gender">Gender</span> <em>*</em></label><select id="g" required><option value="" data-i18n="register.optionSelect" disabled selected>Select an Option</option><option value="Female">Female</option><option value="Male">Male</option></select><span class="err" data-i18n="register.errors.gender">Select a gender.</span></div>
+<div class="row"><label for="dob"><span data-i18n="register.labels.dob">Date of Birth</span> <em>*</em></label><input id="dob" type="date" required><span class="err" data-i18n="register.errors.dob">Choose a valid date of birth.</span></div>
+<div class="row"><label for="prg"><span data-i18n="register.labels.program">Program</span> <em>*</em></label><div><select id="prg" required></select><span class="err" data-i18n="register.errors.program">Select a program.</span><small class="fee-hint" id="program-fee" aria-live="polite" data-i18n="register.feeHint">Select a program to see its tuition fee.</small></div></div>
+<div class="row"><label for="nat" data-i18n="register.labels.nationality">Nationality</label><input id="nat" data-i18n-placeholder="register.placeholders.nationality" placeholder="Your Nationality"></div>
+<div class="row"><label for="res" data-i18n="register.labels.residence">Place of Residence</label><input id="res" data-i18n-placeholder="register.placeholders.residence" placeholder="Your Place of Residence"></div>
+<div class="acts"><span></span><button type="button" class="btn" data-next data-i18n="register.next">Next</button></div></div>
+<div class="pane"><h4 data-i18n="register.contactTitle">Contact Information</h4>
+<div class="row"><label for="ph"><span data-i18n="register.labels.phone">Phone</span> <em>*</em></label><input id="ph" type="tel" required data-i18n-placeholder="register.placeholders.phone" placeholder="+250 ..."><span class="err" data-i18n="register.errors.phone">Enter a phone number with at least 9 digits.</span></div>
+<div class="row"><label for="em" data-i18n="register.labels.email">Email</label><input id="em" type="email" data-i18n-placeholder="register.placeholders.email" placeholder="name@example.com"><span class="err" data-i18n="register.errors.email">Enter a valid email address.</span></div>
+<div class="row"><label for="pn"><span data-i18n="register.labels.parentName">Parent / Guardian Name</span> <em>*</em></label><input id="pn" required data-i18n-placeholder="register.placeholders.parentName" placeholder="Parent or guardian"><span class="err" data-i18n="register.errors.parentName">Enter a parent or guardian name.</span></div>
+<div class="row"><label for="pp"><span data-i18n="register.labels.parentPhone">Parent / Guardian Phone</span> <em>*</em></label><input id="pp" type="tel" required data-i18n-placeholder="register.placeholders.parentPhone" placeholder="+250 ..."><span class="err" data-i18n="register.errors.parentPhone">Enter a phone number with at least 9 digits.</span></div>
+<div class="acts"><button type="button" class="btn out" data-prev data-i18n="register.back">Back</button><button type="button" class="btn" data-next data-i18n="register.next">Next</button></div></div>
+<div class="pane"><h4 data-i18n="register.docsTitle">Documents &amp; Submit</h4>
+<div class="row"><label for="hi" data-i18n="register.labels.health">Health Insurance</label><input id="hi" data-i18n-placeholder="register.placeholders.health" placeholder="e.g. RSSB"></div>
+<div class="row"><label data-i18n="register.labels.photo">Passport Photo</label><div><div class="drop" id="drop" tabindex="0" role="button" aria-label="Upload passport photo"><div aria-hidden="true" style="font-size:2rem;color:var(--red)">⇪</div><b id="dn" data-i18n="register.upload">Upload Passport Photo</b><span>Drag &amp; drop image here or <u>Browse File</u></span><br><small data-i18n="register.uploadInfo">JPG, PNG, WEBP allowed. Maximum size: 2MB.</small><input type="file" id="file" accept="image/jpeg,image/png,image/webp" hidden></div><span id="fe" style="display:block;color:var(--red);font-size:.85rem;margin-top:8px"></span></div></div>
+<div class="acts"><button type="button" class="btn out" data-prev data-i18n="register.back">Back</button><button type="submit" class="btn" data-i18n="register.submit">Submit Application</button></div><p id="submit-error" class="application-error" role="alert" hidden></p></div>
 </form>
-<div class="ok" id="ok" role="status"><h4>Application received</h4><p>Thank you. KTSS will contact you using the phone number you provided.</p><p style="color:var(--mute);font-size:.9rem">Demo only: this form does not send data anywhere yet.</p></div>
+<div class="ok" id="ok" role="status"><h4 data-i18n="register.successTitle">Application received</h4><p data-i18n="register.successText">Thank you. KTSS will contact you using the phone number you provided.</p><p style="color:var(--mute);font-size:.9rem" data-i18n="register.successNote">Keep this request reference for follow-up.</p><p><strong id="application-ref"></strong></p></div>
 </div></div></section>
 </main>
 <footer><div class="wrap"><div class="fg">

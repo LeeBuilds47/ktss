@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Admin Login – KTSS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css"></head>
 <body data-page="admin">
 <div class="top"><div class="wrap"><nav aria-label="Quick links"><a href="register.html">Register</a><a href="fees.html">Tuition Fees</a><a href="faq.html">FAQ</a><a href="admin.html">Admin</a></nav><div class="contact"><a href="tel:+250000000000">+250 000 000 000</a><a href="mailto:info@ktss.example">info@ktss.example</a></div></div></div>
@@ -10,9 +10,40 @@
 <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">☰</button>
 <nav class="menu" id="menu" aria-label="Main"><ul><li><a href="index.html" data-nav="index">Home</a></li><li><a href="about.html" data-nav="about">About Us</a><ul class="sub"><li><a href="about.html?tab=principal">Principal's Message</a></li><li><a href="about.html?tab=mission">Mission and Vision</a></li><li><a href="about.html?tab=staff">Staff</a></li><li><a href="about.html?tab=youth">KTSS Youth</a></li></ul></li><li><a href="programs.html" data-nav="programs">Programs</a><ul class="sub"><li><a href="program.html?p=olevel">O'Level</a></li><li><a href="program.html?p=software">Software Development</a></li><li><a href="program.html?p=accounting">Accounting</a></li></ul></li><li><a href="news.html" data-nav="news">News &amp; Events</a></li><li><a href="gallery.html" data-nav="gallery">Gallery</a></li><li><a href="downloads.html" data-nav="downloads">Downloads</a></li><li><a href="contact.html" data-nav="contact">Contact Us</a></li></ul><a class="btn nav-apply" href="register.html">Apply Now</a></nav></div></header>
 <main>
-<section class="s"><div class="wrap"><div class="lg"><h1>Admin login</h1><p style="color:var(--mute);margin:0 0 22px">For KTSS staff only.</p>
-<form id="af" novalidate><div class="row"><label for="au">Username</label><input id="brian" autocomplete="brian"></div><div class="row"><label for="ap">Password</label><input id="ap" type="123" autocomplete="123"></div>
-<button class="btn" type="submit">Log in</button><div class="msg" id="am" role="status"></div></form></div></div></section>
+<section class="s"><div class="wrap">
+<div class="lg" id="admin-login"><h1 data-i18n="admin.loginTitle">Admin sign in</h1><p style="color:var(--mute);margin:0 0 22px" data-i18n="admin.staffOnly">For KTSS staff only.</p>
+<form id="af" novalidate><div class="row"><label for="au" data-i18n="admin.username">Username</label><input id="au" name="username" autocomplete="username" required></div><div class="row"><label for="ap" data-i18n="admin.password">Password</label><input id="ap" name="password" type="password" autocomplete="current-password" required></div>
+<button class="btn" type="submit" data-i18n="admin.signIn">Sign in</button><div class="msg" id="am" role="status" aria-live="polite"></div></form></div>
+<div id="admin-dashboard" hidden>
+<div class="admin-heading"><div><p class="admin-eyebrow" data-i18n="admin.workspace">KTSS ADMIN WORKSPACE</p><h1 data-i18n="admin.dashboardTitle">Application requests</h1><p class="admin-subtitle" data-i18n="admin.dashboardIntro">Review submissions, track decisions, and export your records.</p></div><div class="admin-actions"><button class="btn out" id="refresh-requests" type="button" data-i18n="admin.refresh">Refresh</button><button class="btn out" id="export-requests" type="button" data-i18n="admin.export">Export CSV</button><button class="btn" id="admin-logout" type="button" data-i18n="admin.logout">Sign out</button></div></div>
+<div class="admin-stats" aria-label="Application request summary">
+<article class="admin-stat"><span data-i18n="admin.total">Total requests</span><strong id="count-all">0</strong></article>
+<article class="admin-stat"><span data-i18n="admin.new">New</span><strong id="count-new">0</strong></article>
+<article class="admin-stat"><span data-i18n="admin.reviewing">In review</span><strong id="count-reviewing">0</strong></article>
+<article class="admin-stat"><span data-i18n="admin.accepted">Accepted</span><strong id="count-accepted">0</strong></article>
+<article class="admin-stat"><span data-i18n="admin.rejected">Declined</span><strong id="count-rejected">0</strong></article>
+</div>
+<section class="admin-panel" aria-labelledby="requests-title">
+<div class="admin-panel-heading"><div><h2 id="requests-title" data-i18n="admin.allRequests">All requests</h2><p id="results-summary" aria-live="polite"></p></div></div>
+<div class="admin-filters">
+<label><span data-i18n="admin.search">Search</span><input id="request-search" type="search" data-i18n-placeholder="admin.searchPlaceholder" placeholder="Name, email, phone, or request ID"></label>
+<label><span data-i18n="admin.status">Status</span><select id="request-status"><option value="all" data-i18n="admin.allStatuses">All statuses</option><option value="new" data-i18n="admin.new">New</option><option value="reviewing" data-i18n="admin.reviewing">In review</option><option value="accepted" data-i18n="admin.accepted">Accepted</option><option value="rejected" data-i18n="admin.rejected">Declined</option></select></label>
+<label><span data-i18n="admin.program">Program</span><select id="request-program"><option value="all" data-i18n="admin.allPrograms">All programs</option><option value="olevel">O'Level</option><option value="software">Software Development</option><option value="accounting">Accounting</option></select></label>
+<label><span data-i18n="admin.from">From</span><input id="request-from" type="date"></label>
+<label><span data-i18n="admin.to">To</span><input id="request-to" type="date"></label>
+</div>
+<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th data-i18n="admin.applicant">Applicant</th><th data-i18n="admin.program">Program</th><th data-i18n="admin.submitted">Submitted</th><th data-i18n="admin.status">Status</th><th><span class="sr-only" data-i18n="admin.actions">Actions</span></th></tr></thead><tbody id="request-rows"><tr><td colspan="5" class="admin-empty" data-i18n="admin.loading">Loading requests...</td></tr></tbody></table></div>
+<div class="admin-table-footer"><p id="page-summary" aria-live="polite"></p><div><button class="btn out" id="page-previous" type="button" data-i18n="admin.previous">Previous</button><button class="btn out" id="page-next" type="button" data-i18n="admin.next">Next</button></div></div>
+<p id="request-error" class="admin-error" role="alert" hidden></p>
+</section>
+</div>
+</div></section>
+<dialog id="request-detail" class="request-dialog" aria-labelledby="detail-title">
+<form method="dialog" class="dialog-close-row"><button type="submit" class="dialog-close" aria-label="Close">×</button></form>
+<div class="request-detail-content"><p class="admin-eyebrow" data-i18n="admin.requestDetail">REQUEST DETAIL</p><h2 id="detail-title"></h2><p id="detail-id" class="detail-id"></p>
+<div id="detail-fields" class="detail-grid"></div><div id="detail-photo-wrap" hidden><h3 data-i18n="admin.passportPhoto">Passport photo</h3><img id="detail-photo" class="detail-photo" alt=""></div>
+<form id="detail-form"><label for="detail-status" data-i18n="admin.updateStatus">Update status</label><select id="detail-status"><option value="new" data-i18n="admin.new">New</option><option value="reviewing" data-i18n="admin.reviewing">In review</option><option value="accepted" data-i18n="admin.accepted">Accepted</option><option value="rejected" data-i18n="admin.rejected">Declined</option></select><label for="detail-notes" data-i18n="admin.internalNotes">Internal notes</label><textarea id="detail-notes" maxlength="4000" rows="4" data-i18n-placeholder="admin.notesPlaceholder" placeholder="Notes visible only to signed-in administrators"></textarea><p id="detail-updated" class="detail-id"></p><div class="dialog-actions"><button type="button" class="btn out" id="detail-cancel" data-i18n="admin.close">Close</button><button type="submit" class="btn" data-i18n="admin.save">Save changes</button></div><p id="detail-error" class="admin-error" role="alert" hidden></p></form>
+</div></dialog>
 </main>
 <footer><div class="wrap"><div class="fg">
 <div><h5>About Us</h5><p>KTSS Technical Secondary School. Add a short history and mission statement here.</p><div class="soc"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a><a href="#" aria-label="X">x</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="WhatsApp">wa</a></div></div>
