@@ -264,3 +264,44 @@ nav.menu.open{display:flex}
 @media(max-width:760px){.cg{grid-template-columns:1fr}.ncard{grid-template-columns:1fr}.calc .row{grid-template-columns:1fr}}
 @media(max-width:900px){.admin-stats{grid-template-columns:repeat(3,minmax(120px,1fr))}.admin-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-filters label:first-child{grid-column:1/-1}}
 @media(max-width:620px){.admin-heading{display:grid}.admin-actions{width:100%}.admin-actions .btn{flex:1;padding:9px}.admin-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.admin-stat{padding:14px}.admin-stat strong{font-size:1.55rem}.admin-filters{grid-template-columns:1fr;padding:12px 16px 18px}.admin-filters label:first-child{grid-column:auto}.admin-panel-heading{padding:18px 16px 8px}.admin-table{min-width:640px}.admin-table th,.admin-table td{padding:12px}.admin-table-footer{padding:14px 16px;align-items:flex-start;flex-direction:column}.request-detail-content{padding:18px}.detail-grid{grid-template-columns:1fr}.detail-field{min-height:unset}.dialog-actions .btn{flex:1;padding:9px 10px}}
+
+/* Improve application form input visibility */
+
+input,
+select,
+textarea {
+    background-color: #f8fafc !important;
+    border: 2px solid #94a3b8 !important;
+    border-radius: 8px !important;
+    color: #1e293b !important;
+    padding: 12px 14px !important;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Make placeholder text visible */
+
+input::placeholder,
+textarea::placeholder {
+    color: #64748b !important;
+    opacity: 1;
+}
+
+/* Highlight the field when someone clicks it */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid #2563eb !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Make form labels easier to read */
+
+label {
+    color: #1e293b;
+    font-weight: 600;
+}
